@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class TrainConsistManagementApp {
 
@@ -9,15 +6,16 @@ public class TrainConsistManagementApp {
 
         System.out.println("=== Train Consist Management App ===");
 
-        Set<String> bogieIds = new HashSet<>();
+        Set<String> trainFormation = new LinkedHashSet<>();
 
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
-        bogieIds.add("BG103");
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
+        trainFormation.add("Engine");
+        trainFormation.add("Sleeper");
+        trainFormation.add("Cargo");
+        trainFormation.add("Guard");
 
-        System.out.println("\nUnique Bogie IDs in Train:");
-        System.out.println(bogieIds);
+        trainFormation.add("Sleeper");
+
+        System.out.println("\nFinal Train Formation (Ordered & Unique):");
+        System.out.println(trainFormation);
     }
 }
