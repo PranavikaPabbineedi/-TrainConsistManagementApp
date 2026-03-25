@@ -1,43 +1,30 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
-class Bogie {
-    String name;
-    int capacity;
-
-    Bogie(String name, int capacity) {
-        this.name = name;
-        this.capacity = capacity;
-    }
-
-    @Override
-    public String toString() {
-        return name + " - Capacity: " + capacity;
-    }
-}
+import java.util.LinkedList;
 public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
         System.out.println("=== Train Consist Management App ===");
 
-        List<Bogie> bogies = new ArrayList<>();
+        LinkedList<String> trainConsist = new LinkedList<>();
 
-        bogies.add(new Bogie("Sleeper", 72));
-        bogies.add(new Bogie("AC Chair", 56));
-        bogies.add(new Bogie("First Class", 24));
+        trainConsist.add("Engine");
+        trainConsist.add("Sleeper");
+        trainConsist.add("AC");
+        trainConsist.add("Cargo");
+        trainConsist.add("Guard");
 
-        System.out.println("\nBefore Sorting:");
-        for (Bogie b : bogies) {
-            System.out.println(b);
-        }
+        System.out.println("\nInitial Train Consist:");
+        System.out.println(trainConsist);
 
-        bogies.sort(Comparator.comparingInt(b -> b.capacity));
+        trainConsist.add(2, "Pantry Car");
 
-        System.out.println("\nAfter Sorting by Capacity:");
-        for (Bogie b : bogies) {
-            System.out.println(b);
-        }
+        System.out.println("\nAfter adding Pantry Car:");
+        System.out.println(trainConsist);
+
+        trainConsist.removeFirst();
+        trainConsist.removeLast();
+
+        System.out.println("\nFinal Train Consist:");
+        System.out.println(trainConsist);
     }
 }
